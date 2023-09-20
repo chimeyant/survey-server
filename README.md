@@ -1,0 +1,2 @@
+# Sendewa Server
+Whatsapp Gateway

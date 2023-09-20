@@ -1,0 +1,9 @@
+node_modules
+build
+storage
+coverage
+wa_auth
+.vscode
+.DS_STORE
+.env
+tmp
