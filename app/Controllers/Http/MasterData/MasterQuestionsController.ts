@@ -58,4 +58,10 @@ export default class MasterQuestionsController {
 
     return response.status(result.code).send(result)
   }
+
+  public async listalls({}:HttpContextContract){
+    const result = await this.Service.listalls()
+
+    return result;
+  }
 }

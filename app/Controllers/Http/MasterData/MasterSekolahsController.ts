@@ -51,4 +51,10 @@ export default class MasterSekolahsController {
 
     return response.status(result.code).send(result)
   }
+
+  public async combo({}:HttpContextContract){
+    const result = await this.Service.combo()
+
+    return result;
+  }
 }

@@ -56,12 +56,21 @@ Route.group(()=>{
   Route.group(()=>{
     Route.resource("sekolah","MasterData/MasterSekolahsController")
     Route.resource("jenis","MasterData/MasterTypesController")
+    Route.resource("pertanyaan/:master_type_uuid","MasterData/MasterQuestionsController")
+    Route.get("pertanyaan-all","MasterData/MasterQuestionsController.listalls")
   }).prefix("master-data").middleware(['auth'])
 
   //route data combo
   Route.group(()=>{
-
+    Route.get("sekolah","MasterData/MasterSekolahsController.combo")
   }).prefix('combo').middleware('auth')
+
+  /**
+   * Route Aktifitas
+   */
+  Route.group(()=>{
+    Route.resource("trx","Aktifitas/TrxesController")
+  }).prefix("aktifitas").middleware("auth")
 
   //route utility
   Route.group(()=>{

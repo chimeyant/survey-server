@@ -67,35 +67,18 @@ export default class AppsController {
             route: "/backend/master-jenis",
             type: "item",
           },
-          // {
-          //   title: "Pengaturan",
-          //   icon: "mdi-cog-outline",
-          //   route: "/backend/master-pengaturan",
-          //   type: "item",
-          // },
-          // {
-          //   title: "Kontak",
-          //   icon: "mdi-contacts",
-          //   route: "/backend/master-contact",
-          //   type: "item",
-          // },
-
-
         ] },
-        // { title: "Halaman Depan", type: "subMenu", route: "/", submenus:[
-        //   {
-        //     title: "Slider",
-        //     icon: "image",
-        //     route: "/backend/halaman-depan-slider",
-        //     type: "item",
-        //   },
-        //   {
-        //     title: "Video",
-        //     icon: "mdi-video",
-        //     route: "/backend/halaman-depan-video",
-        //     type: "item",
-        //   },
-        // ] },
+
+
+        { title: "Aktifitas", type: "subMenu", route: "/", submenus:[
+          {
+            title: "Data Umpan Balik",
+            icon: "mdi-bullhorn",
+            route: "/backend/aktifitas",
+            type: "item",
+          },
+        ] },
+
 
 
         { title: "Utility", type: "subMenu", route: "/", submenus:[

@@ -35,7 +35,7 @@ export default class MasterQuestion extends compose(BaseModel, SoftDeletes ) {
     masterQuestion.uuid = uuid()
   }
 
-  @belongsTo(()=> MasterType,{foreignKey:"master_type_uuid",localKey:"uuid"})
+  @belongsTo(()=> MasterType,{foreignKey:"masterTypeUuid",localKey:"uuid"})
   public mastertype: BelongsTo<typeof MasterType>
 
   @computed()

@@ -20,6 +20,38 @@ class MasterQuestionService {
     return datas;
   }
 
+  async listalls(){
+    const model = await this.Model.query().preload('mastertype').orderBy("id",'asc')
+
+    const datas:{}[]=[]
+
+    model.forEach(element => {
+      const row ={}
+      row['master_question_uuid']= element.uuid
+      row['master_type_uuid']= element.masterTypeUuid
+      row['jenis']= element.mastertype.name
+      row['tidak_sesuai']={
+        id: element.uuid,
+        nilai: 0,
+        key: 'tidak_sesuai'
+      }
+      row['sesuai']={
+        id: element.uuid,
+        nilai:0,
+        key:'sesuai'
+      }
+      row['sangat_sesuai']={
+        id: element.uuid,
+        nilai: 0,
+        key: 'sangat_sesuai'
+      }
+      Object.assign(row, element.datadisplay, row)
+      datas.push(row)
+    });
+
+    return datas;
+  }
+
   async store(payload:MasterQuestionType){
     try {
       const model = new this.Model
@@ -97,7 +129,6 @@ class MasterQuestionService {
         error:error
       }
     }
-
   }
 }
 

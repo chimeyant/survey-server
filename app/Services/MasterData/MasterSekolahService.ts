@@ -115,6 +115,18 @@ class MasterSekolahService {
       }
     }
   }
+
+  async combo(){
+    const model = await this.Model.query().orderBy("name",'asc')
+
+    const datas:{}[]=[]
+
+    model.forEach(element => {
+      datas.push(element.combo)
+    });
+
+    return datas;
+  }
 }
 
 export default new MasterSekolahService
