@@ -107,7 +107,61 @@ export default class AppsController {
 
     if(authent == 'administrator'){
       menus = [
+        {
+          title: "Dashboard",
+          type: "item",
+          icon: "mdi-view-dashboard",
+          route: "/backend/dashboard",
+        },
 
+        { title: "APLIKASI", type: "divisi", route: "/" , icon:'mdi-desktop-mac-dashboard'},
+        { title: "Data Master", type: "subMenu", route: "/", submenus:[
+          {
+            title: "Master Sekolah",
+            icon: "mdi-office-building-outline",
+            route: "/backend/master-sekolah",
+            type: "item",
+          },
+          {
+            title: "Master Jenis",
+            icon: "mdi-widgets",
+            route: "/backend/master-jenis",
+            type: "item",
+          },
+        ] },
+
+
+        { title: "Aktifitas", type: "subMenu", route: "/", submenus:[
+          {
+            title: "Data Umpan Balik",
+            icon: "mdi-bullhorn",
+            route: "/backend/aktifitas",
+            type: "item",
+          },
+        ] },
+
+
+
+        { title: "Utility", type: "subMenu", route: "/", submenus:[
+          {
+            title: "Akun Aplikasi",
+            icon: "engineering",
+            route: "/backend/user",
+            type: "item",
+          },
+          {
+            title: "Profil Pengguna",
+            icon: "accessibility",
+            route: "/backend/profil-akun",
+            type: "item",
+          },
+          {
+            title: "Ganti Kata Sandi",
+            icon: "vpn_key",
+            route: "/backend/chngpwd",
+            type: "item",
+          },
+        ] },
       ];
       return menus;
     }
